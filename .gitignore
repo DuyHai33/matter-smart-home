@@ -1,0 +1,45 @@
+# --- Build ESP-IDF ---
+firmware/*/build/
+firmware/*/sdkconfig.old
+firmware/*/managed_components/
+
+# sdkconfig that chua CONFIG_DEFAULT_WIFI_PASSWORD dang ro -> KHONG commit.
+# Chi commit ban da boi: sdkconfig.capstone-redacted
+firmware/*/sdkconfig
+firmware/*/sdkconfig.bak*
+!firmware/*/sdkconfig.defaults*
+!firmware/*/sdkconfig.capstone-redacted
+
+# --- Thu muc lam viec noi bo, khong cong bo ---
+logs/
+scripts/
+tasks/
+GHI-CHU-DU-AN.md
+CLAUDE.md
+.claude/
+
+# Backup flash toan phan (4MB). Chua NVS: mat khau Wi-Fi dang ro + khoa rieng
+# cua ca 5 fabric Matter. TUYET DOI khong day len GitHub.
+*.bin
+backup-flash-*
+
+# Anh chup man hinh THO cua trang quan tri router: hien mat khau Wi-Fi va MAC
+# cua thiet bi trong nha. Ban dung cho bao cao la docs/figures/hinh-3-3-*.png,
+# da boi den ca hai o Security Passphrase.
+docs/screenshots/Screenshot *.png
+
+# File mau slide cua bo mon (45 MB, khong phai san pham cua do an)
+docs/pp-maulvtn-bmdt_2021.ppt
+docs/report/*.backup.docx
+docs/report/*.txt
+
+# --- Cau hinh may ca nhan ---
+.vscode/
+.idea/
+
+# --- He thong ---
+.DS_Store
+Thumbs.db
+*.swp
+__pycache__/
+*.pyc
