@@ -1,0 +1,50 @@
+vi_tri,khoang_cach_m,vat_can,rssi_dbm,so_lenh_gui,so_lenh_thanh_cong,ty_le_phan_tram,do_tre_tb_ms
+Cung ban,1,Khong,-25,10,10,100,126
+Cung phong,1,Khong,-48,10,10,100,117
+Cung phong,3,Khong,-51,10,10,100,120
+Cung phong,5,Khong,-48,10,10,100,118
+Cung phong,10,Khong,-63,10,9,90,282
+Phong ben,8,1 tuong,-68,10,10,100,119
+#
+# GHI CHU PHUONG PHAP DO — do ngay 17/08/2026
+#
+# - RSSI doc truc tiep tu thiet bi qua cluster WiFiNetworkDiagnostics (attribute RSSI),
+#   tuc la muc tin hieu chinh ESP32-C6 nhan duoc tu AP, khong phai do tu may tinh.
+# - Cot do_tre_tb_ms la do tre RIENG PHAN INVOKE (tu luc lenh roi controller den luc nhan
+#   InvokeResponse), do bang hieu timestamp giua hai dong log chip-tool
+#   "ICR moving to [AwaitingRe]" va "ICR moving to [ResponseRe]".
+#   DAY LA CUNG PHUONG PHAP voi Bang 4.2 nen hai bang so sanh truc tiep duoc voi nhau.
+# - Moi vi tri gui 10 lenh onoff toggle, cach nhau 1 s.
+# - Vi tri "Cung ban" board cam USB vao PC; cac vi tri con lai board chay nguon roi,
+#   moi lan doi vi tri board KHONG reboot (giu nguyen nguon).
+#
+# QUAN SAT — cac diem can giai thich trong Chuong IV, KHONG duoc lam muot so lieu:
+#
+# 1. RSSI KHONG giam don dieu theo khoang cach: 1 m = -48, 3 m = -51, 5 m = -48 dBm.
+#    Vi tri 5 m lai manh hon 3 m. Day la hien tuong that cua truyen song trong nha
+#    (multipath fading + huong antenna board), khong phai loi do.
+#
+# 2. Vi tri 10 m la diem duy nhat co lenh that bai (9/10 = 90%) va do tre trung binh
+#    tang vot len 282 ms, gap ~2,4 lan cac vi tri con lai (117-126 ms). Nguyen nhan
+#    thay ro trong day so: 3 lan do bi keo dai bat thuong (557, 779, 540 ms) xen giua
+#    cac lan binh thuong (100-126 ms) => co retry o lop duoi khi tin hieu yeu (-63 dBm).
+#    Neu bo 3 outlier nay thi trung binh con ~112 ms, tuong duong cac vi tri khac.
+#
+# 3. NGHICH LY dang chu y: vi tri "Phong ben" co RSSI YEU NHAT (-68 dBm, yeu hon ca
+#    vi tri 10 m) nhung lai dat 10/10 va do tre 119 ms — tot ngang vi tri 1 m.
+#    => RSSI mot minh KHONG quyet dinh chat luong dieu khien. Ket qua nay cho thay
+#    o dai -48..-68 dBm, do tre bi chi phoi boi nhieu / trang thai kenh tai thoi diem do
+#    nhieu hon la boi cuong do tin hieu. Day la ket luan dang gia cua thi nghiem.
+#
+# 4. Vi tri "Cung ban" (-25 dBm) manh hon "Cung phong 1 m" (-48 dBm) toi 23 dB.
+#    Giai thich: o "Cung ban" board dat cung mat ban voi router (khoang cach rat ngan,
+#    duoi 1 m, KHONG do chinh xac bang thuoc). Day la vung RAT GAN AP nen RSSI bao hoa
+#    o muc cao. => Khi ve do thi RSSI theo khoang cach hoac lam hoi quy suy hao duong
+#    truyen, NEN TACH RIENG diem nay lam "moc tham chieu can", khong dua vao hoi quy,
+#    vi khoang cach cua no khong duoc do chinh xac.
+#
+# MOC DO KHOANG CACH (da chot 17/08/2026):
+#    Cot khoang_cach_m do tu VI TRI GOC = cho ngoi. Router FPT AX3000HV2 dat ngay canh
+#    laptop tai cho ngoi, nen khoang cach board -> cho ngoi XAP XI khoang cach board ->
+#    router (AP), sai so co ±1 m. Vi vay cot nay dung duoc de doi chieu voi ly thuyet
+#    suy hao duong truyen; can ghi ro sai so ±1 m trong bao cao.

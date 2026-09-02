@@ -1,0 +1,9 @@
+muc,gia_tri,don_vi,nguon_do
+Tong dung luong flash su dung,1797520,byte,idf.py size (Total image size) - do 16/08/2026 20:41
+Dung luong .text,1384260,byte,idf.py size (Flash Code .text) - do 16/08/2026 20:41
+Dung luong .rodata,257580,byte,idf.py size (Flash Code .rodata) - do 16/08/2026 20:41
+DRAM su dung,226312,byte,idf.py size (DIRAM used = 50.06% cua 452112) - do 16/08/2026 20:41
+Free heap sau khoi dong,KHONG DO DUOC,byte,GeneralDiagnostics cua firmware nay khong co attribute CurrentHeapFree - attribute-list chi co 10 entry (NetworkInterfaces RebootCount TestEventTriggersEnabled UpTime DeviceLoadStatus + 5 global). Muon do phai sua firmware va nap lai - se xoa sach cac fabric dang co
+Free heap sau khi commission 1 fabric,KHONG DO DUOC,byte,nhu tren
+Free heap sau khi commission 3 fabric,KHONG DO DUOC,byte,nhu tren
+Thoi gian boot den khi san sang,3.006,giay,log monitor - moc I(3006) publish _matterc._udp sau khi co IP; rieng Commissioning window opened la I(1666)

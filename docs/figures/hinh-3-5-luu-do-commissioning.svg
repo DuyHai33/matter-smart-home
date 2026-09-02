@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="a" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <path d="M0,0 L9,3.5 L0,7 z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <rect width="960" height="640" fill="#fff"/>
+
+  <text x="235" y="34" text-anchor="middle" font-size="13" font-weight="bold">CHUẨN BỊ THIẾT BỊ</text>
+  <text x="700" y="34" text-anchor="middle" font-size="13" font-weight="bold">GHÉP NỐI QUA IP</text>
+  <line x1="480" y1="46" x2="480" y2="452" stroke="#000" stroke-dasharray="4 4"/>
+
+  <!-- ===================== COT TRAI ===================== -->
+  <rect x="130" y="52" width="210" height="30" rx="15" fill="none" stroke="#000" stroke-width="2"/>
+  <text x="235" y="72" text-anchor="middle" font-size="13" font-weight="bold">Bắt đầu</text>
+
+  <line x1="235" y1="82" x2="235" y2="104" stroke="#000" marker-end="url(#a)"/>
+
+  <rect x="110" y="106" width="250" height="48" fill="none" stroke="#000"/>
+  <text x="235" y="126" text-anchor="middle" font-size="12" font-weight="bold">1. Nhúng SSID và mật khẩu</text>
+  <text x="235" y="143" text-anchor="middle" font-size="12">vào sdkconfig, rồi biên dịch</text>
+
+  <line x1="235" y1="154" x2="235" y2="176" stroke="#000" marker-end="url(#a)"/>
+
+  <rect x="110" y="178" width="250" height="48" fill="none" stroke="#000"/>
+  <text x="235" y="198" text-anchor="middle" font-size="12" font-weight="bold">2. Xoá sạch flash, nạp firmware</text>
+  <text x="235" y="215" text-anchor="middle" font-size="12">NVS cũ làm bước 3 bị bỏ qua</text>
+
+  <line x1="235" y1="226" x2="235" y2="248" stroke="#000" marker-end="url(#a)"/>
+
+  <rect x="110" y="250" width="250" height="48" fill="none" stroke="#000"/>
+  <text x="235" y="270" text-anchor="middle" font-size="12" font-weight="bold">3. Board tự vào Wi-Fi 2,4 GHz</text>
+  <text x="235" y="287" text-anchor="middle" font-size="12">nhận IPv4 và IPv6 global</text>
+
+  <line x1="235" y1="298" x2="235" y2="320" stroke="#000" marker-end="url(#a)"/>
+
+  <rect x="110" y="322" width="250" height="48" fill="none" stroke="#000"/>
+  <text x="235" y="342" text-anchor="middle" font-size="12" font-weight="bold">4. Quảng bá _matterc._udp</text>
+  <text x="235" y="359" text-anchor="middle" font-size="12">cửa sổ ghép nối mở</text>
+
+  <path d="M360 346 L420 346 L420 128 L580 128" fill="none" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- ===================== COT PHAI ===================== -->
+  <rect x="580" y="104" width="250" height="48" fill="none" stroke="#000"/>
+  <text x="705" y="124" text-anchor="middle" font-size="12" font-weight="bold">5. Controller tìm thấy thiết bị</text>
+  <text x="705" y="141" text-anchor="middle" font-size="12">qua mDNS, không dùng BLE</text>
+
+  <line x1="705" y1="152" x2="705" y2="174" stroke="#000" marker-end="url(#a)"/>
+
+  <rect x="580" y="176" width="250" height="48" fill="none" stroke="#000"/>
+  <text x="705" y="196" text-anchor="middle" font-size="12" font-weight="bold">6. Phiên PASE</text>
+  <text x="705" y="213" text-anchor="middle" font-size="12">mã ghép nối · đo được 1,4 s</text>
+
+  <line x1="705" y1="224" x2="705" y2="246" stroke="#000" marker-end="url(#a)"/>
+
+  <rect x="580" y="248" width="250" height="48" fill="none" stroke="#000"/>
+  <text x="705" y="268" text-anchor="middle" font-size="12" font-weight="bold">7. Chứng thực thiết bị</text>
+  <text x="705" y="285" text-anchor="middle" font-size="12">chứng thư thử nghiệm VID 0xFFF1</text>
+
+  <line x1="705" y1="296" x2="705" y2="318" stroke="#000" marker-end="url(#a)"/>
+
+  <rect x="580" y="320" width="250" height="48" fill="none" stroke="#000"/>
+  <text x="705" y="340" text-anchor="middle" font-size="12" font-weight="bold">8. Cấp chứng thư vận hành</text>
+  <text x="705" y="357" text-anchor="middle" font-size="12">thiết bị gia nhập fabric mới</text>
+
+  <line x1="705" y1="368" x2="705" y2="390" stroke="#000" marker-end="url(#a)"/>
+
+  <rect x="580" y="392" width="250" height="48" fill="none" stroke="#000"/>
+  <text x="705" y="412" text-anchor="middle" font-size="12" font-weight="bold">9. Phiên CASE</text>
+  <text x="705" y="429" text-anchor="middle" font-size="12">kênh vận hành đã mã hoá</text>
+
+  <line x1="705" y1="440" x2="705" y2="462" stroke="#000" marker-end="url(#a)"/>
+
+  <!-- ===================== QUYET DINH ===================== -->
+  <path d="M705 464 L845 512 L705 560 L565 512 z" fill="none" stroke="#000" stroke-width="1.5"/>
+  <text x="705" y="508" text-anchor="middle" font-size="12" font-weight="bold">Thêm fabric nữa?</text>
+  <text x="705" y="525" text-anchor="middle" font-size="11">CommissionedFabrics &lt; 5</text>
+
+  <!-- nhanh con slot: quay ve buoc 5 -->
+  <path d="M565 512 L440 512 L440 462 L420 462 L420 128 L580 128" fill="none" stroke="#000" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#a)"/>
+  <rect x="360" y="428" width="76" height="16" fill="#fff"/>
+  <text x="430" y="440" text-anchor="end" font-size="12" font-weight="bold">còn chỗ</text>
+  <rect x="272" y="444" width="164" height="16" fill="#fff"/>
+  <text x="430" y="456" text-anchor="end" font-size="11">mở cửa sổ từ fabric đã có</text>
+
+  <!-- nhanh du 5 -->
+  <line x1="845" y1="512" x2="890" y2="512" stroke="#000" marker-end="url(#a)"/>
+  <text x="866" y="500" text-anchor="middle" font-size="12" font-weight="bold">đủ 5</text>
+
+  <!-- ket qua -->
+  <rect x="110" y="560" width="740" height="52" fill="none" stroke="#000" stroke-width="2"/>
+  <text x="480" y="581" text-anchor="middle" font-size="13" font-weight="bold">5 fabric đồng thời trên một thiết bị</text>
+  <text x="480" y="600" text-anchor="middle" font-size="12">fabric thứ 6 bị từ chối: CHIP Error 0x0000000B — hết bộ nhớ</text>
+  <path d="M890 512 L910 512 L910 586 L850 586" fill="none" stroke="#000" stroke-width="1.5" marker-end="url(#a)"/>
+</svg>

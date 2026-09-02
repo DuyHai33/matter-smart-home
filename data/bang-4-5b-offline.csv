@@ -1,0 +1,38 @@
+chuc_nang,co_Internet,khong_Internet,ghi_chu
+Bat/tat tu Home Assistant (LAN),CON,CON,Xac nhan bang mat: bam nut den tren web HA thi LED tren board doi trang thai - do 17/08/2026 19:12
+Doi mau tu Home Assistant,CON,CON,Xac nhan bang mat va da quay video: doi mau tren HA thi LED WS2812 tren board doi mau theo - do 17/08/2026
+Dieu khien tu chip-tool fabric 2,CON,CON,chip-tool nhan duoc InvokeResponse ca hai che do - log test-offline-offline-20260817-191241.log
+Dong bo trang thai giua cac fabric,CON,CON,Bat den bang fabric 2 roi doc lai bang fabric 3 ra OnOff TRUE - dung ca hai che do
+Nut nhan vat ly,,,KHONG DO DUOC - firmware Giai doan 5 chua viet nen 3 nut GP20/GP19/GP18 chua gan chuc nang Matter. Phan cung da noi va da test dat 17/08/2026
+Truy cap HA tu ngoai mang,CON,MAT,Dien thoai tat Wi-Fi dung 4G khong mo duoc web HA khi da ngat WAN - dung nhu du kien, day la gioi han cua remote access chu khong phai cua dieu khien local
+Commission thiet bi moi,CON,,KHONG DO DUOC khi offline - xem ghi chu ben duoi
+#
+# GHI CHU PHUONG PHAP DO — do ngay 17/08/2026
+#
+# CACH NGAT INTERNET: tat ket noi WAN/PPPoE trong giao dien quan tri router FPT
+# (http://192.168.1.1). Modem FPT loai tich hop khong co cong WAN RJ45 roi, "cong WAN"
+# cua no la cong quang. KHONG tat router, KHONG rut day LAN cua Pi, KHONG tat Wi-Fi —
+# lam vay se pha luon LAN va thi nghiem mat y nghia.
+#
+# XAC MINH DIEU KIEN THI NGHIEM (script tu kiem truoc khi do, log dong dau tien):
+#   Internet: MAT Internet
+#   LAN     : CON LAN (thay Home Assistant)
+#   Board   : CON thay board ESP32-C6
+# => Dung dieu kien can: mat Internet nhung con nguyen LAN.
+#
+# Log tho:
+#   logs/test-offline-online-20260817-190615.log   (moc so sanh, con Internet)
+#   logs/test-offline-offline-20260817-191241.log  (khi da ngat Internet)
+#
+# ⚠️ DONG "Commission thiet bi moi" — KHONG KET LUAN DUOC, va day la cho de sai nhat:
+#    Thiet bi dang giu 5/5 fabric, DA KICH TRAN (SupportedFabrics = 5; hom 16/08 thu
+#    them fabric #6 that bai voi CHIP Error 0x0000000B No memory — xem Bang 4.3).
+#    Neu thu commission luc offline thi CHAC CHAN that bai, nhung la vi HET SLOT chu
+#    KHONG phai vi mat Internet. Ghi "MAT" vao day la ket luan sai.
+#    Muon do that thi phai xoa bot 1 fabric truoc — chua lam vi sat deadline va vi
+#    5 fabric la diem nhan cua do an. Da co backup flash 4MB neu sau nay muon thu lai.
+#
+# ⚠️ DONG "Nut nhan vat ly": phan cung 3 nut DA NOI VA DA TEST DAT ngay 17/08/2026
+#    (log: nhat-ky.md muc 20:0x, moi nut 4 lan nhan+nha). Chua do duoc o bang nay vi
+#    firmware Matter dang chay la example light, chua co endpoint Generic Switch va
+#    chua gan chuc nang cho 3 nut. Do duoc ngay sau khi viet xong firmware Giai doan 5.

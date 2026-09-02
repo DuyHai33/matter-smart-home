@@ -1,0 +1,37 @@
+lan_do,nguon_dieu_khien,lenh,do_tre_ms,phuong_phap_do,ghi_chu
+1,chip-tool fabric2,toggle,155,timestamp log chip-tool (ICR AwaitingRe -> ResponseRe),do 17/08/2026 06:41 - tong 1606ms trong do mDNS discovery + CASE handshake 1451ms
+2,chip-tool fabric2,toggle,111,timestamp log chip-tool (ICR AwaitingRe -> ResponseRe),do 17/08/2026 06:41 - tong 1533ms trong do mDNS discovery + CASE handshake 1422ms
+3,chip-tool fabric2,toggle,147,timestamp log chip-tool (ICR AwaitingRe -> ResponseRe),do 17/08/2026 06:41 - tong 1610ms trong do mDNS discovery + CASE handshake 1463ms
+4,chip-tool fabric2,toggle,115,timestamp log chip-tool (ICR AwaitingRe -> ResponseRe),do 17/08/2026 06:41 - tong 1559ms trong do mDNS discovery + CASE handshake 1444ms
+5,chip-tool fabric2,toggle,139,timestamp log chip-tool (ICR AwaitingRe -> ResponseRe),do 17/08/2026 06:41 - tong 1577ms trong do mDNS discovery + CASE handshake 1438ms
+6,Home Assistant,toggle,163,HA REST API POST /api/services/light/toggle,do 17/08/2026 06:52 - trang thai sau lenh: on
+7,Home Assistant,toggle,172,HA REST API POST /api/services/light/toggle,do 17/08/2026 06:52 - trang thai sau lenh: off
+8,Home Assistant,toggle,122,HA REST API POST /api/services/light/toggle,do 17/08/2026 06:52 - trang thai sau lenh: on
+9,Home Assistant,toggle,174,HA REST API POST /api/services/light/toggle,do 17/08/2026 06:52 - trang thai sau lenh: off
+10,Home Assistant,toggle,104,HA REST API POST /api/services/light/toggle,do 17/08/2026 06:52 - trang thai sau lenh: on
+11,Nut nhan vat ly -> Home Assistant,InitialPress (lan 1),24.7,hieu dau thoi gian: serial board <-> event.test_product_button tren HA,do 18/08/2026 09:29 - da tru lech dong ho Pi-PC -836.1ms
+12,Nut nhan vat ly -> Home Assistant,InitialPress (lan 2),30.4,hieu dau thoi gian: serial board <-> event.test_product_button tren HA,do 18/08/2026 09:29 - da tru lech dong ho Pi-PC -836.1ms
+13,Nut nhan vat ly -> Home Assistant,InitialPress (lan 3),25.9,hieu dau thoi gian: serial board <-> event.test_product_button tren HA,do 18/08/2026 09:29 - da tru lech dong ho Pi-PC -836.1ms
+14,Nut nhan vat ly -> Home Assistant,InitialPress (lan 4),25.1,hieu dau thoi gian: serial board <-> event.test_product_button tren HA,do 18/08/2026 09:29 - da tru lech dong ho Pi-PC -836.1ms
+15,Nut nhan vat ly -> Home Assistant,InitialPress (lan 5),27.6,hieu dau thoi gian: serial board <-> event.test_product_button tren HA,do 18/08/2026 09:29 - da tru lech dong ho Pi-PC -836.1ms
+,,,,,
+# GHI CHU PHUONG PHAP DO:
+# - Cot do_tre_ms la do tre cua rieng lenh Invoke (tu luc lenh roi controller den luc nhan
+#   InvokeResponse tu thiet bi) khi phien bao mat CASE da san sang. Day la con so so sanh duoc
+#   giua hai controller.
+# - Rieng chip-tool la tien trinh ngan han: moi lan chay deu phai mDNS discovery + bat tay CASE
+#   lai tu dau (~1.44 s). Controller thuong truc nhu Home Assistant giu phien nen khong chiu
+#   phan nay. Vi vay cot ghi_chu tach rieng con so tong de doi chieu.
+# - 5 dong "Nut nhan vat ly" DA DO DUOC ngay 18/08/2026, sau khi firmware co endpoint 2
+#   Generic Switch. Day la chieu nguoc lai: thiet bi chu dong bao len controller.
+#   Phuong phap: moc thoi gian luc firmware bat duoc nut (doc tu cong noi tiep, ghi tren may
+#   tinh) tru moc thoi gian luc Home Assistant ghi nhan su kien (doc qua History API).
+#   Hai moc nam tren hai may nen phai do lech dong ho truoc: -836.1 ms, tan mat +/-5.5 ms.
+#   Khong tru lech nay thi ket qua sai hoan toan.
+# - Bang tren chi lay 5 lan nhan dau tien cho khop thiet ke ban dau. Bo mau day du 30 su kien
+#   (15 InitialPress + 15 ShortRelease) nam o data/bang-4-2-raw-nut-vat-ly.csv:
+#   TB 30.7 ms, trung vi 28.7, min 24.7, max 48.0, SD 5.8.
+# - KHONG do duoc bang chip-tool: lenh subscribe-event chay o che do lenh don thi nhan xong
+#   cac su kien cu roi thoat; chay trong che do tuong tac thi giu duoc dang ky va duong truyen
+#   van song (co Ack trong log) nhung thiet bi khong day su kien moi ve, do su kien khong duoc
+#   danh dau urgent. Home Assistant la controller thuong truc nen khong vuong han che nay.
